@@ -9,7 +9,7 @@ servers:
     description: Development Server
 paths:
   /test:
-    get:
+    post:
       summary: Basic server status check
       description: Returns a simple message to confirm the server is running.
       responses:

@@ -36,6 +36,10 @@ app.get('/', (req, res) => {
     res.json({ message: "Welcome to the Cooking App API." });
 });
 
+app.get('/show-name', (req, res) =>{
+    res.json({message: "Emanuele"});
+});
+
 // --- 5. Start Listening ---
 app.listen(PORT, () => {
     console.log(`🚀 Server running on http://localhost:${PORT}`);
