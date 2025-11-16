@@ -2,6 +2,8 @@ import express from 'express';
 import cors from 'cors';
 import 'dotenv/config'; 
 import db from './src/config/db.js';
+import { initDatabase } from './src/config/initDb.js';
+import userRoutes from './src/routes/userRoutes.js';
 
 // --- NEW SWAGGER IMPORTS ---
 import swaggerUI from 'swagger-ui-express';
@@ -23,12 +25,15 @@ const swaggerDocument = YAML.load(swaggerPath);
 // --- 2. Middleware (Global Helpers) ---
 app.use(cors());
 app.use(express.json());
+initDatabase();
+
 
 
 // --- 3. SWAGGER ROUTE ---
 // Tell Express: When a user visits /api-docs, use the swaggerUI middleware 
 // to render the interactive documentation using our swaggerDocument blueprint.
 app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
+app.use('/api/v1', userRoutes);
 
 
 // --- 4. Base Route (Test) ---

@@ -53,12 +53,17 @@ This is like **ordering all Our major kitchen appliances**:
 5. **`swagger-ui-express`** = **Restaurant menu display** - shows customers what We can cook
 6. **`yamljs`** = **Menu card printer** - prints beautiful menus in special format
 
+
+
 **Development Tool:**
 ```bash
 npm i -D nodemon
+
+npm i -g nodemon
 ```
 - **`nodemon`** = Our **kitchen assistant** who watches We cook and instantly cleans up/restarts when We make a mess
 
+- "-g = global, makes it available everywhere on your system"
 ---
 
 ## 🧱 **1.4 Update package.json**
@@ -451,4 +456,6 @@ Our kitchen can now:
 - Serve simple dishes (send responses)
 - Show its menu (API documentation)
 - Connect to storage (database)
+
+
 
